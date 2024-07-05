@@ -1,11 +1,28 @@
-from services.youtube_loader import YoutubeLoaderService
-from langchain_community.chat_models import ChatOllama
-from prompts import prompt
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
+from .services.youtube_loader import YoutubeLoaderService
 
-youtube_loader_service = YoutubeLoaderService()
-llm = ChatOllama(model="gemma2")
-transcript = youtube_loader_service.load_video("https://www.youtube.com/watch?v=jBFFUwL0TyY")
-chain = prompt | llm
+app = FastAPI()
+origins = [
+  "*",
+  "http://localhost:3000/"
+]
 
-print(chain.invoke({"transcript":transcript}).content)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
+summarize_service = YoutubeLoaderService()
+
+@app.post("/sse")
+async def response(prompt:str):
+  try:
+    return StreamingResponse(summarize_service.summarize(prompt),media_type='text/event-stream')
+  except Exception as e:
+    raise HTTPException(status_code=404, detail="Item not found")
+  
 
