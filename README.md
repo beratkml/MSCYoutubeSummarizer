@@ -2,7 +2,7 @@
 
 ## Overview
 
-MSC Youtube Summarizer is a tool that summarizes english youtube videos locally using Ollama and Llamaindex. It provides a simple FastAPI server that scrapes youtube transcripts and stream the summarized content to clients using Streamlit.
+MSC Youtube Summarizer is a tool that summarizes english youtube videos locally using Ollama and Llamaindex. It provides a simple FastAPI server that scrapes youtube transcripts and streams the summarized content to client using Streamlit.
 
 ## Getting Started
 
