@@ -57,8 +57,6 @@ This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the LICENSE 
 
 ## Acknowledgments
 
-Inspiration, code snippets, etc.
-
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [Streamlit](https://streamlit.io/)
 - [LlamaIndex](https://www.llamaindex.ai/)
