@@ -56,7 +56,7 @@ streamlit run streamlit_main.py
 This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the LICENSE file for details
 
 ## Acknowledgments
-
+- [Ollama](https://ollama.com/)
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [Streamlit](https://streamlit.io/)
 - [LlamaIndex](https://www.llamaindex.ai/)
