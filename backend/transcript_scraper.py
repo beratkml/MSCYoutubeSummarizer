@@ -5,7 +5,7 @@ class YoutubeScrapeService:
     pass
 
   def clear_file(self):
-    with open("./transcript_data/transcripts.txt", "w", encoding="utf-8") as writing:
+    with open("./transcript_data/transcripts.txt", "w", encoding="utf-8"):
       pass
   
   def scrape_transcript(self,url:str):
