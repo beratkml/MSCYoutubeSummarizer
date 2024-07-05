@@ -20,9 +20,6 @@ summarize_service = YoutubeLoaderService()
 
 @app.post("/sse")
 async def response(prompt:str):
-  try:
-    return StreamingResponse(summarize_service.summarize(prompt),media_type='text/event-stream')
-  except Exception as e:
-    raise HTTPException(status_code=404, detail="Item not found")
+  return StreamingResponse(summarize_service.summarize(prompt),media_type='text/event-stream')
   
 
