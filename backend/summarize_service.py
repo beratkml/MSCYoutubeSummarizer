@@ -14,4 +14,5 @@ class SummarizeService():
     service_context = ServiceContext.from_defaults(embed_model=self.embed_model,llm=self.model)
     summarizer = TreeSummarize(service_context=service_context,verbose=True,streaming=True)
     response = summarizer.get_response(query_str="Summarize this video transcript",text_chunks=docs[0].text)
+    print("Finished")
     return response

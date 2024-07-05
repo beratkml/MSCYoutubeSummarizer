@@ -1,7 +1,7 @@
-from transcript_scraper import YoutubeScrapeService
+from .transcript_scraper import YoutubeScrapeService
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
-from summarize_service import SummarizeService
+from .summarize_service import SummarizeService
 
 app = FastAPI()
 scraper = YoutubeScrapeService()
