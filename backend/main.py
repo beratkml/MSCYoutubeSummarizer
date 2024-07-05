@@ -10,6 +10,6 @@ summarize = SummarizeService()
 @app.get("/sse")
 async def main(url:str):
     scraper.scrape_transcript(url=url)
-    return StreamingResponse(summarize.summarize(),media_type="text/plain")
+    return StreamingResponse(summarize.summarize(),media_type="text/event-stream")
 
 
