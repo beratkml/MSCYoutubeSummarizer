@@ -12,14 +12,16 @@ All dependencies can be found inside the requirements.txt file.
 
 ### Installing
 
-1. Clone the repository
+1. Install [ollama](https://ollama.com/)
+
+2. Clone the repository
 
 ```
 git clone <repository_url>
 cd <repositroy_url>
 ```
 
-2. Install dependencies:
+3. Install dependencies:
 
 ```
 pip install -r requirements.txt
